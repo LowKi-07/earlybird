@@ -9,12 +9,12 @@ export type Character = {
 };
 
 export const CHARACTERS: Character[] = [
-  { id: 'robot', name: 'Robot', emoji: '🤖', color: '#8FD0FF', line: 'Beep boop. Morning protocol complete.' },
-  { id: 'alien', name: 'Alien', emoji: '👽', color: '#C8F53C', line: 'Take me to your coffee.' },
-  { id: 'frog', name: 'Frog', emoji: '🐸', color: '#6FDB9B', line: 'Ribbit. You leapt out of bed!' },
-  { id: 'ghost', name: 'Ghost', emoji: '👻', color: '#DCD8FF', line: "Boo! Didn't think you'd find me." },
-  { id: 'cat', name: 'Cat', emoji: '🐱', color: '#FFC86B', line: 'I was here first. Obviously.' },
-  { id: 'rooster', name: 'Rooster', emoji: '🐓', color: '#FF9670', line: "Cock-a-doodle-you're-up!" },
+  { id: 'robot', name: 'Robot', emoji: '🤖', color: '#D4D4D4', line: 'Beep boop. Morning protocol complete.' },
+  { id: 'alien', name: 'Alien', emoji: '👽', color: '#BDBDBD', line: 'Take me to your coffee.' },
+  { id: 'frog', name: 'Frog', emoji: '🐸', color: '#A8A8A8', line: 'Ribbit. You leapt out of bed!' },
+  { id: 'ghost', name: 'Ghost', emoji: '👻', color: '#EDEDED', line: "Boo! Didn't think you'd find me." },
+  { id: 'cat', name: 'Cat', emoji: '🐱', color: '#C9C9C9', line: 'I was here first. Obviously.' },
+  { id: 'rooster', name: 'Rooster', emoji: '🐓', color: '#B0B0B0', line: "Cock-a-doodle-you're-up!" },
 ];
 
 export type RoomId = 'bedroom' | 'hall' | 'living' | 'kitchen' | 'bathroom';

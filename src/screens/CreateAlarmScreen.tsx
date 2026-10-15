@@ -5,7 +5,7 @@ import { Header, Screen } from '../components/Screen';
 import { HomeModeArt, TravelModeArt } from '../components/AlarmCard';
 import { FadeIn } from '../components/Motion';
 import { useApp } from '../state/AppState';
-import { accent, accentSoft, colors, Tone, type } from '../theme';
+import { accentSoft, colors, Tone, type } from '../theme';
 
 type OptionProps = {
   tone: Tone;
@@ -22,12 +22,12 @@ function Option({ tone, eyebrow, title, body, rule, art, onPress }: OptionProps)
     <Pressable onPress={onPress} style={({ pressed }) => [styles.option, pressed && { transform: [{ scale: 0.98 }] }]}>
       <View style={[styles.optionArt, { backgroundColor: accentSoft(tone) }]}>{art}</View>
       <View style={{ gap: 6 }}>
-        <Text style={[type.eyebrow, { color: tone === 'home' ? '#5E7A08' : colors.coral }]}>{eyebrow}</Text>
+        <Text style={[type.eyebrow, { color: colors.ink2 }]}>{eyebrow}</Text>
         <Text style={[type.title, { color: colors.ink, fontSize: 26 }]}>{title}</Text>
         <Text style={[type.body, { color: colors.ink2 }]}>{body}</Text>
       </View>
       <View style={styles.rule}>
-        <Ionicons name={tone === 'home' ? 'walk' : 'navigate'} size={16} color={tone === 'home' ? colors.ink : accent(tone)} />
+        <Ionicons name={tone === 'home' ? 'walk' : 'navigate'} size={16} color={colors.ink} />
         <Text style={[type.caption, { color: colors.ink, fontWeight: '600', flex: 1 }]}>{rule}</Text>
         <Ionicons name="arrow-forward" size={18} color={colors.ink} />
       </View>

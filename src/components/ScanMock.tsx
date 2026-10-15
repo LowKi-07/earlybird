@@ -83,7 +83,7 @@ export function ScanMock({ progress, width }: Props) {
             const a = iso(x1, y1);
             const b = iso(x2, y2);
             return (
-              <Line key={i} x1={a.X} y1={a.Y} x2={b.X} y2={b.Y} stroke={colors.lime} strokeWidth="1.5" strokeDasharray="2 3" />
+              <Line key={i} x1={a.X} y1={a.Y} x2={b.X} y2={b.Y} stroke={colors.white} strokeWidth="1.5" strokeDasharray="2 3" />
             );
           })
         : null}
@@ -95,9 +95,9 @@ export function ScanMock({ progress, width }: Props) {
         const shown = Math.max(1, Math.floor(local * edges.length));
         return (
           <G key={room.id}>
-            <Polygon points={floor} fill={colors.lime} fillOpacity={scanning ? 0.06 + local * 0.08 : 0.1} />
+            <Polygon points={floor} fill={colors.white} fillOpacity={scanning ? 0.06 + local * 0.08 : 0.1} />
             {points.slice(0, Math.ceil(local * points.length)).map((p, j) => (
-              <Circle key={j} cx={p.X} cy={p.Y} r={1.3} fill={colors.lime} opacity={scanning ? 0.9 : 0.45} />
+              <Circle key={j} cx={p.X} cy={p.Y} r={1.3} fill={colors.white} opacity={scanning ? 0.9 : 0.45} />
             ))}
             {edges.slice(0, shown).map(([x1, y1, x2, y2], j) => (
               <Line
@@ -106,7 +106,7 @@ export function ScanMock({ progress, width }: Props) {
                 y1={y1}
                 x2={x2}
                 y2={y2}
-                stroke={colors.lime}
+                stroke={colors.white}
                 strokeWidth={j >= 8 ? 1 : 1.6}
                 strokeOpacity={j >= 8 ? 0.55 : 1}
               />

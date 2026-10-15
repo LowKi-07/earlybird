@@ -9,7 +9,7 @@ import { Character } from '../components/Character';
 import { PulseRings, useLoop } from '../components/Motion';
 import { useApp } from '../state/AppState';
 import { formatTime, rollHunt } from '../data/mock';
-import { colors, ND, type } from '../theme';
+import { colors, MONO_EMOJI, ND, type } from '../theme';
 
 const DISTANCES = [12.4, 8.2, 4.5, 1.8];
 const ARROW_DEG = [-38, 24, -12, 0];
@@ -89,7 +89,7 @@ export function ARHuntScreen() {
         {/* character peeking once you're close */}
         {close && phase === 'tracking' ? (
           <View style={styles.peek} pointerEvents="box-none">
-            <PulseRings color={colors.lime} size={200} count={2} style={{ position: 'absolute' }} />
+            <PulseRings color={colors.white} size={200} count={2} style={{ position: 'absolute' }} />
             <Pressable onPress={find}>
               <Character character={hunt.character} size={84} />
             </Pressable>
@@ -125,8 +125,8 @@ export function ARHuntScreen() {
           <View style={styles.panel}>
             <View style={styles.panelTop}>
               <View style={{ flex: 1 }}>
-                <Text style={[type.eyebrow, { color: colors.lime }]}>Character detected nearby</Text>
-                <Text style={[styles.distance, { color: close ? colors.lime : colors.white }]}>
+                <Text style={[type.eyebrow, { color: colors.white }]}>Character detected nearby</Text>
+                <Text style={[styles.distance, { color: close ? colors.white : colors.white }]}>
                   {distance.toFixed(1)}
                   <Text style={styles.unit}>m</Text>
                 </Text>
@@ -146,15 +146,15 @@ export function ARHuntScreen() {
             </View>
             <View style={styles.bars}>
               {DISTANCES.map((_, i) => (
-                <View key={i} style={[styles.bar, { backgroundColor: i <= step ? colors.lime : colors.nightLine }]} />
+                <View key={i} style={[styles.bar, { backgroundColor: i <= step ? colors.white : colors.nightLine }]} />
               ))}
             </View>
             <Text style={[type.body, { color: colors.white, fontSize: 15 }]}>{hint}</Text>
           </View>
           {close ? (
-            <Button label="Find character" variant="lime" icon="hand-left" onPress={find} />
+            <Button label="Find character" variant="inverse" icon="hand-left" onPress={find} />
           ) : (
-            <Button label={moving ? 'Walking…' : 'Move closer'} variant="lime" icon="footsteps" onPress={moveCloser} disabled={moving} />
+            <Button label={moving ? 'Walking…' : 'Move closer'} variant="inverse" icon="footsteps" onPress={moveCloser} disabled={moving} />
           )}
           <Text style={[type.caption, styles.protoNote]}>Prototype: “Move closer” simulates you walking.</Text>
         </View>
@@ -202,6 +202,7 @@ function FoundOverlay({
             key={i}
             style={[
               styles.spark,
+              MONO_EMOJI,
               {
                 opacity: burst.interpolate({ inputRange: [0, 0.2, 1], outputRange: [0, 1, 0] }),
                 transform: [
@@ -226,7 +227,7 @@ function FoundOverlay({
             “{hunt.character.line}”
           </Text>
           <View style={styles.where}>
-            <Ionicons name="location" size={13} color={colors.lime} />
+            <Ionicons name="location" size={13} color={colors.white} />
             <Text style={[type.caption, { color: colors.white }]}>
               {hunt.room.name}, {hunt.spot}
             </Text>
@@ -234,7 +235,7 @@ function FoundOverlay({
         </Animated.View>
       </View>
       <View style={{ paddingHorizontal: 20, paddingBottom: bottomInset }}>
-        <Button label="COMPLETE ALARM" variant="lime" icon="checkmark" onPress={onComplete} />
+        <Button label="COMPLETE ALARM" variant="inverse" icon="checkmark" onPress={onComplete} />
       </View>
     </View>
   );
@@ -252,23 +253,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 8,
     borderWidth: 1,
-    borderColor: 'rgba(255,59,48,0.5)',
+    borderColor: 'rgba(255,255,255,0.35)',
   },
-  recDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.danger },
+  recDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.white },
   reticleWrap: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
   reticle: {
     width: 120,
     height: 120,
     borderRadius: 60,
     borderWidth: 3,
-    borderColor: colors.lime,
+    borderColor: colors.white,
     borderTopColor: 'transparent',
     borderBottomColor: 'transparent',
   },
   peek: { position: 'absolute', top: '30%', left: 0, right: 0, alignItems: 'center', justifyContent: 'center', height: 200 },
   bottom: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: 16, gap: 10 },
   panel: {
-    backgroundColor: 'rgba(7,8,11,0.82)',
+    backgroundColor: 'rgba(0,0,0,0.82)',
     borderRadius: 26,
     padding: 18,
     gap: 12,
@@ -282,16 +283,16 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 32,
-    backgroundColor: colors.lime,
+    backgroundColor: colors.white,
     alignItems: 'center',
     justifyContent: 'center',
   },
   bars: { flexDirection: 'row', gap: 6 },
   bar: { flex: 1, height: 5, borderRadius: 3 },
   protoNote: { color: colors.nightText3, textAlign: 'center' },
-  found: { backgroundColor: 'rgba(7,8,11,0.88)', justifyContent: 'space-between' },
+  found: { backgroundColor: 'rgba(0,0,0,0.88)', justifyContent: 'space-between' },
   foundCenter: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 24 },
-  spark: { position: 'absolute', fontSize: 22, color: colors.lime },
+  spark: { position: 'absolute', fontSize: 22, color: colors.white },
   where: {
     flexDirection: 'row',
     alignItems: 'center',

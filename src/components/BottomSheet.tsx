@@ -55,7 +55,7 @@ export function BottomSheet({ visible, onClose, dark, scrim = true, children, st
 }
 
 const styles = StyleSheet.create({
-  scrim: { backgroundColor: 'rgba(7,8,11,0.45)' },
+  scrim: { backgroundColor: 'rgba(0,0,0,0.45)' },
   sheet: {
     position: 'absolute',
     left: 0,

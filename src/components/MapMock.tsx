@@ -72,10 +72,10 @@ export function MapMock({ user = USER_START, destination, radiusPx = 66, showRou
         viewBox={focus ? `${focus.x} ${focus.y} ${focus.w} ${focus.h}` : `0 0 ${W} ${H}`}
         preserveAspectRatio={focus ? 'xMidYMid meet' : 'xMidYMid slice'}
       >
-        <Rect x={-W} y={-H} width={W * 3} height={H * 3} fill="#ECE9E2" />
+        <Rect x={-W} y={-H} width={W * 3} height={H * 3} fill="#EDEDED" />
 
         {/* city blocks */}
-        <G fill="#E3DFD6">
+        <G fill="#E2E2E2">
           {[
             [50, 170, 92, 120], [160, 170, 52, 150], [50, 340, 52, 120], [120, 340, 92, 120],
             [230, 340, 62, 120], [310, 340, 32, 120], [50, 480, 52, 130], [120, 480, 92, 130],
@@ -87,17 +87,17 @@ export function MapMock({ user = USER_START, destination, radiusPx = 66, showRou
         </G>
 
         {/* lake + palace grounds */}
-        <Ellipse cx="90" cy="236" rx="46" ry="32" fill="#CFE2EE" />
-        <Rect x="234" y="178" width="104" height="138" rx="14" fill="#D7E6C6" />
-        <SvgText fontFamily={SVG_FONT} x="244" y="194" fill="#7E9670" fontSize="9" fontWeight="600">
+        <Ellipse cx="90" cy="236" rx="46" ry="32" fill="#D2D2D2" />
+        <Rect x="234" y="178" width="104" height="138" rx="14" fill="#DCDCDC" />
+        <SvgText fontFamily={SVG_FONT} x="244" y="194" fill="#7A7A7A" fontSize="9" fontWeight="600">
           PALACE GROUNDS
         </SvgText>
-        <SvgText fontFamily={SVG_FONT} x="90" y="240" fill="#7C9AB0" fontSize="9" fontWeight="600" textAnchor="middle">
+        <SvgText fontFamily={SVG_FONT} x="90" y="240" fill="#7A7A7A" fontSize="9" fontWeight="600" textAnchor="middle">
           Lake
         </SvgText>
 
         {/* roads */}
-        <G stroke="#D8D3C8" strokeLinecap="round" fill="none">
+        <G stroke="#D2D2D2" strokeLinecap="round" fill="none">
           {MAJOR.map((d, i) => <Path key={i} d={d} strokeWidth="18" />)}
           {MINOR.map((d, i) => <Path key={i} d={d} strokeWidth="10" />)}
         </G>
@@ -105,10 +105,10 @@ export function MapMock({ user = USER_START, destination, radiusPx = 66, showRou
           {MAJOR.map((d, i) => <Path key={i} d={d} strokeWidth="14" />)}
           {MINOR.map((d, i) => <Path key={i} d={d} strokeWidth="7" />)}
         </G>
-        <SvgText fontFamily={SVG_FONT} x="330" y="465" fill="#A19C90" fontSize="9" fontWeight="600" textAnchor="middle">
+        <SvgText fontFamily={SVG_FONT} x="330" y="465" fill="#A0A0A0" fontSize="9" fontWeight="600" textAnchor="middle">
           Sayyaji Rao Rd
         </SvgText>
-        <SvgText fontFamily={SVG_FONT} x="226" y="760" fill="#A19C90" fontSize="9" fontWeight="600" transform="rotate(-90 226 760)">
+        <SvgText fontFamily={SVG_FONT} x="226" y="760" fill="#A0A0A0" fontSize="9" fontWeight="600" transform="rotate(-90 226 760)">
           Albert Victor Rd
         </SvgText>
 
@@ -123,20 +123,20 @@ export function MapMock({ user = USER_START, destination, radiusPx = 66, showRou
         {/* destination */}
         {destination ? (
           <G>
-            <Circle cx={destination.x} cy={destination.y} r={radiusPx} fill={colors.coral} fillOpacity={0.12} stroke={colors.coral} strokeWidth="1.5" strokeDasharray="5 4" />
+            <Circle cx={destination.x} cy={destination.y} r={radiusPx} fill={colors.ink} fillOpacity={0.12} stroke={colors.ink} strokeWidth="1.5" strokeDasharray="5 4" />
             <Ellipse cx={destination.x} cy={destination.y + 2} rx="7" ry="3" fill="rgba(0,0,0,0.2)" />
             <Path
               d={`M${destination.x} ${destination.y} c-4 -10 -14 -16 -14 -27 a14 14 0 0 1 28 0 c0 11 -10 17 -14 27z`}
-              fill={colors.coral}
+              fill={colors.ink}
             />
             <Circle cx={destination.x} cy={destination.y - 27} r="5" fill="#FFFFFF" />
           </G>
         ) : null}
 
         {/* user */}
-        <Circle cx={user.x} cy={user.y} r={10 + pulse * 22} fill="#2F7BFF" fillOpacity={0.25 * (1 - pulse)} />
+        <Circle cx={user.x} cy={user.y} r={10 + pulse * 22} fill="#0A0A0A" fillOpacity={0.25 * (1 - pulse)} />
         <Circle cx={user.x} cy={user.y} r="10" fill="#FFFFFF" />
-        <Circle cx={user.x} cy={user.y} r="7" fill="#2F7BFF" />
+        <Circle cx={user.x} cy={user.y} r="7" fill="#0A0A0A" />
 
         {dim ? <Rect x="0" y="0" width={W} height={H} fill={colors.night} fillOpacity={0.35} /> : null}
       </Svg>

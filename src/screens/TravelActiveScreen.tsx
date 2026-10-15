@@ -110,7 +110,7 @@ export function TravelActiveScreen() {
       >
         <View style={styles.status}>
           <Animated.View style={[styles.live, { opacity: blink }]} />
-          <Text style={[type.eyebrow, { color: colors.coral }]}>Travel alarm active</Text>
+          <Text style={[type.eyebrow, { color: colors.white }]}>Travel alarm active</Text>
         </View>
 
         <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 12 }}>
@@ -129,11 +129,11 @@ export function TravelActiveScreen() {
         </View>
 
         <View style={styles.statusRow}>
-          <Ionicons name="radio-outline" size={16} color={reached ? colors.coral : colors.nightText2} />
+          <Ionicons name="radio-outline" size={16} color={reached ? colors.white : colors.nightText2} />
           <Text style={[type.caption, { color: colors.white, flex: 1 }]}>
             {reached ? 'Arrived' : `Monitoring destination${'.'.repeat(dots)}`}
           </Text>
-          <Ionicons name="battery-full" size={16} color="#6FDB9B" />
+          <Ionicons name="battery-full" size={16} color={colors.nightText2} />
           <Text style={[type.caption, { color: colors.nightText2 }]}>Low power</Text>
         </View>
 
@@ -143,7 +143,7 @@ export function TravelActiveScreen() {
 
         <Button
           label={reached ? 'Arrived' : simulating ? 'Travelling…' : 'Simulate arrival'}
-          variant="coral"
+          variant="inverse"
           icon="bus"
           onPress={simulate}
           disabled={simulating}
@@ -163,7 +163,7 @@ export function TravelActiveScreen() {
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#ECE9E2', justifyContent: 'flex-end' },
+  root: { flex: 1, backgroundColor: '#EDEDED', justifyContent: 'flex-end' },
   top: { position: 'absolute', top: 0, left: 0, right: 0, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', gap: 10 },
   iconBtn: {
     width: 48,
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    backgroundColor: colors.coral,
+    backgroundColor: colors.ink,
     height: 48,
     borderRadius: 24,
     paddingHorizontal: 18,
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     gap: 14,
   },
   status: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  live: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.coral },
+  live: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.white },
   km: { color: colors.white, fontSize: 30, fontWeight: '800', letterSpacing: -1, fontVariant: ['tabular-nums'] },
   kmUnit: { fontSize: 15, color: colors.nightText2, fontWeight: '700' },
   mapArea: { position: 'absolute', top: 0, left: 0, right: 0 },

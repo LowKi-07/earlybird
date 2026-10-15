@@ -58,7 +58,7 @@ export function ScanScreen() {
           <FadeIn>
             <Button
               label="View my map"
-              variant="lime"
+              variant="inverse"
               icon="arrow-forward"
               onPress={() => {
                 setHomeMapped(true);
@@ -116,7 +116,7 @@ export function ScanScreen() {
               style={[styles.chip, complete && styles.chipDone, active && styles.chipActive]}
             >
               {complete ? <Ionicons name="checkmark" size={12} color={colors.ink} /> : null}
-              <Text style={[type.caption, { fontWeight: '700', color: complete ? colors.ink : active ? colors.lime : colors.nightText3 }]}>
+              <Text style={[type.caption, { fontWeight: '700', color: complete ? colors.ink : active ? colors.white : colors.nightText3 }]}>
                 {r.name}
               </Text>
             </View>
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
     height: 300,
     borderRadius: 24,
-    backgroundColor: '#0E1014',
+    backgroundColor: '#0D0D0D',
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
@@ -156,9 +156,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: 2,
-    backgroundColor: colors.lime,
+    backgroundColor: colors.white,
     opacity: 0.7,
-    shadowColor: colors.lime,
+    shadowColor: colors.white,
     shadowOpacity: 1,
     shadowRadius: 12,
   },
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     fontVariant: ['tabular-nums'],
   },
   rec: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  recDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.danger },
+  recDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.white },
   rooms: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 18 },
   chip: {
     flexDirection: 'row',
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.nightLine,
   },
-  chipDone: { backgroundColor: colors.lime, borderColor: colors.lime },
-  chipActive: { borderColor: colors.lime },
+  chipDone: { backgroundColor: colors.white, borderColor: colors.white },
+  chipActive: { borderColor: colors.white },
   hint: { color: colors.nightText2, textAlign: 'center', height: 60, lineHeight: 60 },
 });

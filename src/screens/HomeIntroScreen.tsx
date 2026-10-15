@@ -21,7 +21,7 @@ export function HomeIntroScreen() {
       dark
       footer={
         <>
-          <Button label="Start scanning" icon="scan" variant="lime" onPress={() => go('scan')} />
+          <Button label="Start scanning" icon="scan" variant="inverse" onPress={() => go('scan')} />
           <Text style={[type.caption, styles.privacy]}>
             <Ionicons name="lock-closed" size={11} /> Your home map never leaves this device.
           </Text>
@@ -35,7 +35,7 @@ export function HomeIntroScreen() {
         </View>
       </FadeIn>
       <FadeIn delay={100}>
-        <Text style={[type.eyebrow, { color: colors.lime }]}>Home AR · Setup</Text>
+        <Text style={[type.eyebrow, { color: colors.white }]}>Home AR · Setup</Text>
         <Text style={[type.display, { color: colors.white, marginTop: 10 }]}>Let's map{'\n'}your home</Text>
         <Text style={[type.body, { color: colors.nightText2, marginTop: 14 }]}>
           Walk around your home and scan your rooms. We'll use this map to randomly hide a character every morning.
@@ -45,7 +45,7 @@ export function HomeIntroScreen() {
         {STEPS.map((s) => (
           <View key={s.text} style={styles.step}>
             <View style={styles.stepIcon}>
-              <Ionicons name={s.icon} size={18} color={colors.lime} />
+              <Ionicons name={s.icon} size={18} color={colors.white} />
             </View>
             <Text style={[type.label, { color: colors.white, flex: 1 }]}>{s.text}</Text>
           </View>

@@ -75,7 +75,7 @@ export function TravelMapScreen() {
 
         {!place && !focused ? (
           <FadeIn style={styles.prompt}>
-            <Text style={[type.eyebrow, { color: colors.coral }]}>Travel alarm</Text>
+            <Text style={[type.eyebrow, { color: colors.ink2 }]}>Travel alarm</Text>
             <Text style={[type.title, { color: colors.ink, marginTop: 6 }]}>Where are you going?</Text>
             <Text style={[type.caption, { color: colors.ink2, marginTop: 6 }]}>
               We'll wake you up when you get close. Perfect for buses, trains and long drives.
@@ -94,7 +94,7 @@ export function TravelMapScreen() {
               results.map((p) => (
                 <Pressable key={p.id} onPress={() => select(p)} style={({ pressed }) => [styles.result, pressed && { backgroundColor: colors.paper }]}>
                   <View style={styles.resultIcon}>
-                    <Ionicons name="location" size={16} color={colors.coral} />
+                    <Ionicons name="location" size={16} color={colors.ink} />
                   </View>
                   <View style={{ flex: 1 }}>
                     <Text style={[type.label, { color: colors.ink }]}>{p.name}</Text>
@@ -113,8 +113,8 @@ export function TravelMapScreen() {
           <View style={{ gap: 16 }}>
             <View style={{ gap: 8 }}>
               <View style={styles.saved}>
-                <Ionicons name="checkmark-circle" size={14} color="#1E8E4E" />
-                <Text style={[type.caption, { color: '#1E8E4E', fontWeight: '700' }]}>Destination saved</Text>
+                <Ionicons name="checkmark-circle" size={14} color={colors.ink} />
+                <Text style={[type.caption, { color: colors.ink, fontWeight: '700' }]}>Destination saved</Text>
               </View>
               <View>
                 <Text style={[type.title, { color: colors.ink }]}>{place.name}</Text>
@@ -148,7 +148,7 @@ export function TravelMapScreen() {
             </View>
 
             <View style={styles.power}>
-              <Ionicons name="leaf" size={18} color="#1E8E4E" />
+              <Ionicons name="leaf" size={18} color={colors.ink} />
               <View style={{ flex: 1, gap: 2 }}>
                 <Text style={[type.label, { color: colors.ink }]}>Low-power destination monitoring</Text>
                 <Text style={[type.caption, { color: colors.ink2 }]}>
@@ -159,7 +159,7 @@ export function TravelMapScreen() {
 
             <Button
               label="Activate Travel Alarm"
-              variant="coral"
+              variant="primary"
               icon="navigate"
               onPress={() => {
                 setTravel({ place, radius, active: true });
@@ -174,7 +174,7 @@ export function TravelMapScreen() {
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#ECE9E2' },
+  root: { flex: 1, backgroundColor: '#EDEDED' },
   top: { position: 'absolute', top: 0, left: 0, right: 0, paddingHorizontal: 16, gap: 12 },
   searchRow: { flexDirection: 'row', gap: 10, alignItems: 'center' },
   iconBtn: {
@@ -207,13 +207,13 @@ const styles = StyleSheet.create({
   prompt: { backgroundColor: colors.card, borderRadius: 24, padding: 18 },
   results: { backgroundColor: colors.card, borderRadius: 24, overflow: 'hidden', paddingBottom: 6 },
   result: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 16, paddingVertical: 12 },
-  resultIcon: { width: 34, height: 34, borderRadius: 17, backgroundColor: colors.coralSoft, alignItems: 'center', justifyContent: 'center' },
+  resultIcon: { width: 34, height: 34, borderRadius: 17, backgroundColor: colors.soft, alignItems: 'center', justifyContent: 'center' },
   saved: {
     alignSelf: 'flex-start',
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    backgroundColor: '#E3F5EA',
+    backgroundColor: colors.soft,
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 999,
@@ -224,5 +224,5 @@ const styles = StyleSheet.create({
   segment: { flexDirection: 'row', backgroundColor: colors.paper, borderRadius: 16, padding: 4 },
   segBtn: { flex: 1, height: 40, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
   segOn: { backgroundColor: colors.ink },
-  power: { flexDirection: 'row', gap: 12, alignItems: 'flex-start', backgroundColor: '#F2FAF5', borderRadius: 16, padding: 14 },
+  power: { flexDirection: 'row', gap: 12, alignItems: 'flex-start', backgroundColor: colors.paper, borderRadius: 16, padding: 14 },
 });

@@ -2,6 +2,7 @@ import React from 'react';
 import { Animated, StyleSheet, Text, View } from 'react-native';
 import { Character as CharacterT } from '../data/mock';
 import { useLoop } from './Motion';
+import { MONO_EMOJI } from '../theme';
 
 type Props = {
   character?: CharacterT | null; // null → mystery "?"
@@ -13,7 +14,7 @@ type Props = {
 // A chunky "keycap" tile that reads as a 3D object: darker base, highlight, floating bob + ground shadow.
 export function Character({ character, size = 120, float = true, shadow = true }: Props) {
   const bob = useLoop(1400, { reverse: true });
-  const color = character?.color ?? '#2A2D36';
+  const color = character?.color ?? '#333333';
   const translateY = float ? bob.interpolate({ inputRange: [0, 1], outputRange: [0, -size * 0.08] }) : 0;
   const rotate = float ? bob.interpolate({ inputRange: [0, 1], outputRange: ['-4deg', '4deg'] }) : '0deg';
   const shadowScale = float ? bob.interpolate({ inputRange: [0, 1], outputRange: [1, 0.8] }) : 1;
@@ -50,7 +51,7 @@ export function Character({ character, size = 120, float = true, shadow = true }
             ]}
           />
           {character ? (
-            <Text style={{ fontSize: size * 0.58 }}>{character.emoji}</Text>
+            <Text style={[{ fontSize: size * 0.58 }, MONO_EMOJI]}>{character.emoji}</Text>
           ) : (
             <Text style={[styles.q, { fontSize: size * 0.5 }]}>?</Text>
           )}

@@ -15,7 +15,7 @@ const VB_W = 350;
 const VB_H = 290;
 
 // Top-down wireframe floor plan of the mock apartment.
-export function FloorPlan({ width, highlight, color = colors.lime, showGrid = true, showLabels = true }: Props) {
+export function FloorPlan({ width, highlight, color = colors.white, showGrid = true, showLabels = true }: Props) {
   const height = (width * VB_H) / VB_W;
   return (
     <Svg width={width} height={height} viewBox={`0 0 ${VB_W} ${VB_H}`}>
@@ -42,7 +42,7 @@ export function FloorPlan({ width, highlight, color = colors.lime, showGrid = tr
               width={w}
               height={h}
               rx="6"
-              fill={hot ? color : 'rgba(200,245,60,0.05)'}
+              fill={hot ? color : 'rgba(255,255,255,0.05)'}
               fillOpacity={hot ? 0.22 : 1}
               stroke={color}
               strokeWidth={hot ? 2.2 : 1.2}

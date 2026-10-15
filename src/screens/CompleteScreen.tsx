@@ -6,7 +6,7 @@ import { Character } from '../components/Character';
 import { FadeIn } from '../components/Motion';
 import { useApp } from '../state/AppState';
 import { CHARACTERS, formatTime } from '../data/mock';
-import { colors, type } from '../theme';
+import { colors, MONO_EMOJI, type } from '../theme';
 
 function Stat({ n, label }: { n: string; label: string }) {
   return (
@@ -28,7 +28,7 @@ export function HomeCompleteScreen() {
   return (
     <Screen scroll footer={<Button label="Back home" onPress={finish} />}>
       <FadeIn style={{ alignItems: 'center', marginTop: 24 }}>
-        <Text style={{ fontSize: 64 }}>🎉</Text>
+        <Text style={[{ fontSize: 64 }, MONO_EMOJI]}>🎉</Text>
         <Text style={[type.display, styles.center, { marginTop: 8 }]}>You're awake!</Text>
         <View style={styles.timeRow}>
           <Text style={[type.mega, { color: colors.ink }]}>{done.time}</Text>
@@ -74,9 +74,9 @@ export function TravelCompleteScreen() {
   return (
     <Screen footer={<Button label="Back home" onPress={finish} />}>
       <FadeIn style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{ fontSize: 64 }}>📍</Text>
+        <Text style={[{ fontSize: 64 }, MONO_EMOJI]}>📍</Text>
         <Text style={[type.display, styles.center, { marginTop: 8 }]}>You've arrived.</Text>
-        <Text style={[type.title, { color: colors.coral, marginTop: 12, textAlign: 'center' }]}>
+        <Text style={[type.title, { color: colors.ink2, marginTop: 12, textAlign: 'center' }]}>
           {travel?.place.name ?? 'Destination'}
         </Text>
         <Text style={[type.body, { color: colors.ink2, marginTop: 8 }]}>

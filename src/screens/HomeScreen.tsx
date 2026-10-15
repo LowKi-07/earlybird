@@ -40,7 +40,7 @@ export function HomeScreen() {
       <View style={styles.topBar}>
         <Text style={styles.brand}>earlybird</Text>
         <View style={styles.avatar}>
-          <Text style={[type.label, { color: colors.ink }]}>{userName[0]}</Text>
+          <Text style={[type.label, { color: colors.white }]}>{userName[0]}</Text>
         </View>
       </View>
 
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     width: 38,
     height: 38,
     borderRadius: 19,
-    backgroundColor: colors.lime,
+    backgroundColor: colors.ink,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 12,
   },
-  liveDot: { width: 10, height: 10, borderRadius: 5, backgroundColor: colors.coral },
+  liveDot: { width: 10, height: 10, borderRadius: 5, backgroundColor: colors.ink },
   section: { color: colors.ink3, marginTop: 32, marginBottom: 12 },
   modes: { flexDirection: 'row', gap: 12 },
   reset: { alignItems: 'center', marginTop: 28 },

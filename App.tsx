@@ -95,7 +95,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   fill: { flex: 1 },
-  webBg: { flex: 1, backgroundColor: '#D9D6CF', alignItems: 'center', justifyContent: 'center' },
+  webBg: { flex: 1, backgroundColor: '#D6D6D6', alignItems: 'center', justifyContent: 'center' },
   phone: {
     borderRadius: 48,
     overflow: 'hidden',

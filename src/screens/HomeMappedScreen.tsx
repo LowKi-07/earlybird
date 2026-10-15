@@ -15,10 +15,10 @@ export function HomeMappedScreen() {
   const spots = ROOMS.reduce((n, r) => n + r.spots.length, 0) * 3;
 
   return (
-    <Screen dark footer={<Button label="Create my alarm" variant="lime" icon="alarm" onPress={() => reset(['home', 'arSetup'])} />}>
+    <Screen dark footer={<Button label="Create my alarm" variant="inverse" icon="alarm" onPress={() => reset(['home', 'arSetup'])} />}>
       <Header onBack={goHome} backIcon="close" dark />
       <FadeIn>
-        <Text style={[type.eyebrow, { color: colors.lime }]}>Home mapped ✓</Text>
+        <Text style={[type.eyebrow, { color: colors.white }]}>Home mapped ✓</Text>
         <Text style={[type.display, { color: colors.white, marginTop: 10 }]}>Your home{'\n'}is ready.</Text>
       </FadeIn>
 
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
     padding: 8,
     borderRadius: 24,
-    backgroundColor: '#0E1014',
+    backgroundColor: '#0D0D0D',
     alignItems: 'center',
   },
   stats: { flexDirection: 'row', gap: 10, marginTop: 16 },

@@ -26,7 +26,9 @@ Live preview: https://claude.ai/artifact/K8Do9JB2sLpH8WqTFN5w2z
 
 - Navigation is a deliberately tiny stack in `App.tsx` + `src/state/AppState.tsx` (the owner asked
   not to over-engineer). Prefer extending it over migrating to Expo Router unless asked.
-- Theme tokens in `src/theme.ts`: lime = Home AR, coral = Travel; everyday screens are light,
-  alarm/AR screens are dark.
+- **The app is strictly black and white.** Use only the gray tokens in `src/theme.ts` (no hues, not
+  even for success/error states). Everyday screens are light with black accents; alarm/AR screens
+  are dark with white accents (`Button variant="inverse"`). Home AR vs Travel are told apart by
+  copy and icons, not color. Wrap any emoji in the `MONO_EMOJI` style so it renders grayscale.
 - Animations: pass `useNativeDriver: ND` from `src/theme.ts` (native driver isn't available on web).
 - Use `useScreenWidth()` rather than `useWindowDimensions()` for layout widths (web phone frame).

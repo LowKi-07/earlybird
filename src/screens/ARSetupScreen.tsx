@@ -81,7 +81,7 @@ export function ARSetupScreen() {
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 16 }}>
             <Character size={64} />
             <View style={{ flex: 1, gap: 4 }}>
-              <Text style={[type.eyebrow, { color: colors.lime }]}>Challenge</Text>
+              <Text style={[type.eyebrow, { color: colors.white }]}>Challenge</Text>
               <Text style={[type.heading, { color: colors.white }]}>Find the hidden character</Text>
             </View>
           </View>
@@ -95,7 +95,7 @@ export function ARSetupScreen() {
               ['checkmark-circle-outline', 'Find it = off'],
             ].map(([icon, label], i) => (
               <View key={label} style={styles.howStep}>
-                <Ionicons name={icon as any} size={20} color={colors.lime} />
+                <Ionicons name={icon as any} size={20} color={colors.white} />
                 <Text style={[type.caption, { color: colors.white, textAlign: 'center' }]}>{label}</Text>
                 {i < 2 ? <Ionicons name="chevron-forward" size={14} color={colors.nightText3} style={styles.howArrow} /> : null}
               </View>
@@ -188,7 +188,7 @@ function PreviewSheet({
 
   return (
     <BottomSheet visible={visible} onClose={onClose} dark>
-      <Text style={[type.eyebrow, { color: colors.lime, textAlign: 'center' }]}>
+      <Text style={[type.eyebrow, { color: colors.white, textAlign: 'center' }]}>
         {rolling ? 'Rolling tomorrow’s surprise…' : `Tomorrow at ${timeLabel}`}
       </Text>
       <View style={styles.slot}>
@@ -207,7 +207,7 @@ function PreviewSheet({
         </Text>
       </View>
       <View style={{ gap: 10, marginTop: 8 }}>
-        <Button label="Simulate this alarm" variant="lime" icon="play" onPress={onSimulate} disabled={rolling} />
+        <Button label="Simulate this alarm" variant="inverse" icon="play" onPress={onSimulate} disabled={rolling} />
         <Button label="Roll again" variant="glass" icon="dice-outline" onPress={roll} disabled={rolling} />
       </View>
     </BottomSheet>
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
   colon: { fontSize: 64, fontWeight: '800', color: colors.ink3, marginHorizontal: 2, marginTop: -8 },
   period: { marginLeft: 14, gap: 6 },
   periodText: { fontSize: 15, fontWeight: '800', color: colors.ink3, paddingHorizontal: 10, paddingVertical: 5, borderRadius: 10, overflow: 'hidden' },
-  periodOn: { color: colors.ink, backgroundColor: colors.lime },
+  periodOn: { color: colors.white, backgroundColor: colors.ink },
   challenge: { backgroundColor: colors.night, borderRadius: 28, padding: 20, gap: 14, marginTop: 20 },
   how: { flexDirection: 'row', backgroundColor: colors.night2, borderRadius: 18, paddingVertical: 14 },
   howStep: { flex: 1, alignItems: 'center', gap: 6 },

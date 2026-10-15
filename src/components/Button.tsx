@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme';
 
-type Variant = 'primary' | 'lime' | 'coral' | 'secondary' | 'ghost' | 'glass';
+type Variant = 'primary' | 'inverse' | 'secondary' | 'ghost' | 'glass';
 
 type Props = {
   label: string;
@@ -17,8 +17,7 @@ type Props = {
 
 const palette: Record<Variant, { bg: string; fg: string; border?: string }> = {
   primary: { bg: colors.ink, fg: colors.white },
-  lime: { bg: colors.lime, fg: colors.ink },
-  coral: { bg: colors.coral, fg: colors.white },
+  inverse: { bg: colors.white, fg: colors.ink }, // for dark screens
   secondary: { bg: colors.card, fg: colors.ink, border: colors.line },
   ghost: { bg: 'transparent', fg: colors.ink2 },
   glass: { bg: 'rgba(255,255,255,0.08)', fg: colors.white, border: 'rgba(255,255,255,0.16)' },

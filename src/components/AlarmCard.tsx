@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { accent, accentSoft, colors, Tone, type } from '../theme';
+import { colors, Tone, type } from '../theme';
 import { Character } from './Character';
 
 type AlarmCardProps = {
@@ -20,8 +20,8 @@ export function AlarmCard({ time, period, title, subtitle, onPress, onSimulate }
       <View style={styles.alarmTop}>
         <Text style={[type.eyebrow, { color: colors.nightText3 }]}>Next alarm</Text>
         <View style={styles.badge}>
-          <View style={[styles.badgeDot, { backgroundColor: colors.lime }]} />
-          <Text style={[type.caption, { color: colors.lime, fontWeight: '700' }]}>Home AR</Text>
+          <View style={[styles.badgeDot, { backgroundColor: colors.white }]} />
+          <Text style={[type.caption, { color: colors.white, fontWeight: '700' }]}>Home AR</Text>
         </View>
       </View>
       <View style={styles.timeRow}>
@@ -52,19 +52,25 @@ type ModeCardProps = {
   art: React.ReactNode;
 };
 
+// Home AR reads as the "night" mode (black card), Travel as the everyday one (white card).
 export function ModeCard({ tone, eyebrow, title, onPress, art }: ModeCardProps) {
+  const dark = tone === 'home';
   return (
     <Pressable
       onPress={onPress}
-      style={({ pressed }) => [styles.mode, { backgroundColor: accentSoft(tone) }, pressed && { transform: [{ scale: 0.98 }] }]}
+      style={({ pressed }) => [
+        styles.mode,
+        { backgroundColor: dark ? colors.night : colors.card },
+        pressed && { transform: [{ scale: 0.98 }] },
+      ]}
     >
       <View style={styles.modeArt}>{art}</View>
       <View style={{ gap: 4 }}>
-        <Text style={[type.eyebrow, { color: tone === 'home' ? '#5E7A08' : colors.coral }]}>{eyebrow}</Text>
-        <Text style={[type.heading, { color: colors.ink, fontSize: 18 }]}>{title}</Text>
+        <Text style={[type.eyebrow, { color: dark ? colors.nightText2 : colors.ink2 }]}>{eyebrow}</Text>
+        <Text style={[type.heading, { color: dark ? colors.white : colors.ink, fontSize: 18 }]}>{title}</Text>
       </View>
-      <View style={[styles.arrow, { backgroundColor: tone === 'home' ? colors.ink : accent(tone) }]}>
-        <Ionicons name="arrow-forward" size={16} color={colors.white} />
+      <View style={[styles.arrow, { backgroundColor: dark ? colors.white : colors.ink }]}>
+        <Ionicons name="arrow-forward" size={16} color={dark ? colors.ink : colors.white} />
       </View>
     </Pressable>
   );
@@ -75,7 +81,7 @@ export function HomeModeArt() {
     <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
       <Character size={46} float shadow={false} />
       <View style={{ marginLeft: -10, marginBottom: 14 }}>
-        <Character character={{ id: 'alien', name: 'Alien', emoji: '👽', color: colors.lime, line: '' }} size={36} shadow={false} />
+        <Character character={{ id: 'alien', name: 'Alien', emoji: '👽', color: '#D9D9D9', line: '' }} size={36} shadow={false} />
       </View>
     </View>
   );
@@ -86,7 +92,7 @@ export function TravelModeArt() {
     <View style={styles.travelArt}>
       <View style={styles.travelRoad} />
       <View style={styles.travelPin}>
-        <Ionicons name="location" size={30} color={colors.coral} />
+        <Ionicons name="location" size={30} color={colors.ink} />
       </View>
     </View>
   );
@@ -107,7 +113,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 4,
     borderRadius: 999,
-    backgroundColor: 'rgba(200,245,60,0.12)',
+    backgroundColor: 'rgba(255,255,255,0.12)',
   },
   badgeDot: { width: 6, height: 6, borderRadius: 3 },
   timeRow: { flexDirection: 'row', alignItems: 'flex-start', marginTop: 4 },
@@ -118,7 +124,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 5,
-    backgroundColor: colors.lime,
+    backgroundColor: colors.white,
     paddingHorizontal: 14,
     height: 36,
     borderRadius: 18,
@@ -131,7 +137,7 @@ const styles = StyleSheet.create({
     height: 6,
     width: 80,
     borderRadius: 3,
-    backgroundColor: 'rgba(255,90,54,0.25)',
+    backgroundColor: colors.line,
   },
   travelPin: { position: 'absolute', left: 50, bottom: 2 },
 });

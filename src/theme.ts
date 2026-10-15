@@ -7,41 +7,35 @@ export const ND = Platform.OS !== 'web';
 export const SVG_FONT = Platform.OS === 'web' ? '-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif' : undefined;
 
 export const colors = {
-  // Everyday app surfaces: warm paper + ink
-  paper: '#F3F1EC',
+  // Strictly black and white. Everyday surfaces: light gray paper + black ink
+  paper: '#F2F2F2',
   card: '#FFFFFF',
-  ink: '#0E0F12',
-  ink2: '#5B5E66',
-  ink3: '#9A9CA3',
-  line: '#E4E1DA',
+  ink: '#0A0A0A',
+  ink2: '#5C5C5C',
+  ink3: '#9A9A9A',
+  line: '#E0E0E0',
+  soft: '#E8E8E8',
 
   // AR / alarm surfaces: night
-  night: '#07080B',
-  night2: '#12141A',
-  night3: '#1C1F27',
+  night: '#000000',
+  night2: '#111111',
+  night3: '#1E1E1E',
   nightLine: 'rgba(255,255,255,0.10)',
   nightText2: 'rgba(255,255,255,0.62)',
   nightText3: 'rgba(255,255,255,0.38)',
 
-  // Mode accents — Home AR = lime, Travel = coral
-  lime: '#C8F53C',
-  limeSoft: '#EEF9C9',
-  limeDim: 'rgba(200,245,60,0.35)',
-  coral: '#FF5A36',
-  coralSoft: '#FFE3DA',
-  coralDim: 'rgba(255,90,54,0.35)',
-
   white: '#FFFFFF',
-  danger: '#FF3B30',
 };
 
 export type Tone = 'home' | 'travel';
 
-export const accent = (tone: Tone) => (tone === 'home' ? colors.lime : colors.coral);
-export const accentSoft = (tone: Tone) => (tone === 'home' ? colors.limeSoft : colors.coralSoft);
-export const accentDim = (tone: Tone) => (tone === 'home' ? colors.limeDim : colors.coralDim);
-// Text that sits on top of an accent fill
-export const onAccent = (tone: Tone) => (tone === 'home' ? colors.ink : colors.white);
+// Both modes share one monochrome palette; tone only changes copy and icons.
+export const accent = (_tone: Tone) => colors.white; // highlight on dark surfaces
+export const accentSoft = (_tone: Tone) => colors.soft; // tinted panel on light surfaces
+
+// Emoji are drawn in color by the OS; desaturate them to keep the app monochrome.
+// Works on web and Android; iOS may still show color emoji.
+export const MONO_EMOJI = { filter: 'grayscale(1)' } as const;
 
 export const type: Record<string, TextStyle> = {
   mega: { fontSize: 88, fontWeight: '800', letterSpacing: -4, fontVariant: ['tabular-nums'] },

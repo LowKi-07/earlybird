@@ -25,7 +25,7 @@ const rand = (seed: number) => {
 };
 
 // Fake camera feed: a dark room with an AR wireframe overlay (floor grid, walls, a sofa).
-export function ARMock({ walk, sway = 0, color = colors.lime, children }: Props) {
+export function ARMock({ walk, sway = 0, color = colors.white, children }: Props) {
   const vpx = VP.x + sway * 18;
   const proj = (x: number, y: number, z: number) => ({ x: vpx + (x * F) / z, y: VP.y + (y * F) / z });
 
@@ -93,9 +93,9 @@ export function ARMock({ walk, sway = 0, color = colors.lime, children }: Props)
       <Svg width="100%" height="100%" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid slice">
         <Defs>
           <RadialGradient id="cam" cx="50%" cy="45%" r="75%">
-            <Stop offset="0" stopColor="#2A2B30" />
-            <Stop offset="0.6" stopColor="#141519" />
-            <Stop offset="1" stopColor="#050506" />
+            <Stop offset="0" stopColor="#2A2A2A" />
+            <Stop offset="0.6" stopColor="#141414" />
+            <Stop offset="1" stopColor="#050505" />
           </RadialGradient>
         </Defs>
         <Rect x="0" y="0" width={W} height={H} fill="url(#cam)" />

@@ -9,7 +9,7 @@ type Props = {
   dark?: boolean;
 };
 
-export function ProgressIndicator({ progress, label, color = colors.lime, dark = true }: Props) {
+export function ProgressIndicator({ progress, label, color = colors.white, dark = true }: Props) {
   const pct = Math.round(Math.min(1, Math.max(0, progress)) * 100);
   const fg = dark ? colors.white : colors.ink;
   return (

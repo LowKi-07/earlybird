@@ -60,7 +60,7 @@ export function AlarmScreen({ tone, modeLabel, time, period, title, message, emp
       dark
       footer={
         <>
-          <Button label={ctaLabel} icon={ctaIcon} variant={tone === 'home' ? 'lime' : 'coral'} onPress={onCta} />
+          <Button label={ctaLabel} icon={ctaIcon} variant="inverse" onPress={onCta} />
           {noSnooze ? (
             <Animated.View style={{ transform: [{ translateX: shakeX }] }}>
               <Pressable onPress={refuseSnooze} style={styles.snooze}>

@@ -11,6 +11,13 @@ npm run web      # opens in the browser inside a phone frame
 npm start        # scan the QR code with Expo Go to try it on a phone
 ```
 
+## Working from Claude on mobile (cloud sessions)
+
+Open Claude → Code → pick the `LowKi-07/earlybird` repo and describe the change. Dependencies install
+automatically when a cloud session starts (`.claude/settings.json`). After a visible change the
+session rebuilds with `npm run preview:build` and updates the phone preview at
+https://claude.ai/artifact/K8Do9JB2sLpH8WqTFN5w2z (details in `CLAUDE.md`).
+
 ## Flows
 
 **Home AR:** Home → Create Alarm → Home AR → *Let's map your home* → fake scan → floor plan →

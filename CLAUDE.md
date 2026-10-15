@@ -10,7 +10,8 @@ Expo Go against this machine. **After any visible change, rebuild and republish 
 
 Live preview: https://claude.ai/artifact/K8Do9JB2sLpH8WqTFN5w2z
 
-1. `npm install` (fresh cloud checkouts have no node_modules)
+1. Dependencies: a SessionStart hook runs `npm ci` in cloud sessions; run it yourself if
+   `node_modules` is missing
 2. `npx tsc --noEmit`
 3. `npm run preview:build` — static web export into `dist/` with relative paths (`_expo/` is renamed
    to `expo/` because the artifact host reserves names starting with `_`).
@@ -20,7 +21,7 @@ Live preview: https://claude.ai/artifact/K8Do9JB2sLpH8WqTFN5w2z
    - `files`: every file under `dist/` except `index.html` and `metadata.json`
      (`find dist -type f ! -name index.html ! -name metadata.json`). The JS bundle name changes
      every build, so include the new one and set the old bundle path to `null`.
-5. Tell the owner the preview link.
+5. Commit, push the branch, and tell the owner the preview link.
 
 ## Conventions
 

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Progress</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0A0A0A}a:hover{color:#5C5C5C}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: #F2F2F2; color: #0A0A0A; font-family: Inter, system-ui, sans-serif; padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 16px">
+  <header style="display: flex; align-items: center; justify-content: space-between; height: 44px">
+    <a href="Main.dc.html" aria-label="Back to Today" style="width: 40px; height: 40px; border-radius: 20px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; color: #0A0A0A">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+    </a>
+    <span style="font-size: 15px; font-weight: 600">Progress</span>
+    <span style="width: 40px"></span>
+  </header>
+
+  <section style="background: #0A0A0A; color: #FFFFFF; border-radius: 26px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #A3A3A3">Current streak</span>
+    <span style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 64px; font-weight: 800; letter-spacing: -3px; line-height: 64px">12</span><span style="font-size: 18px; font-weight: 700; color: #A3A3A3">days</span></span>
+    <span style="font-size: 14px; color: #A3A3A3">Every mission proved since 30 Oct. Longest: 19 days.</span>
+  </section>
+
+  <section style="background: #FFFFFF; border-radius: 24px; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+    <div style="display: flex; justify-content: space-between; align-items: baseline">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #5C5C5C">This week</span>
+      <span style="font-size: 13px; color: #5C5C5C">22 of 25 proved</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 56px repeat(7, minmax(0, 1fr)); gap: 6px; align-items: center">
+      <span></span>
+      <span style="font-size: 11px; font-weight: 600; color: #5C5C5C; text-align: center">M</span>
+      <span style="font-size: 11px; font-weight: 600; color: #5C5C5C; text-align: center">T</span>
+      <span style="font-size: 11px; font-weight: 600; color: #5C5C5C; text-align: center">W</span>
+      <span style="font-size: 11px; font-weight: 600; color: #5C5C5C; text-align: center">T</span>
+      <span style="font-size: 11px; font-weight: 600; color: #5C5C5C; text-align: center">F</span>
+      <span style="font-size: 11px; font-weight: 600; color: #5C5C5C; text-align: center">S</span>
+      <span style="font-size: 11px; font-weight: 600; color: #5C5C5C; text-align: center">S</span>
+
+      <span style="font-size: 12px; font-weight: 600">Wake</span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+
+      <span style="font-size: 12px; font-weight: 600">Arrive</span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; border: 2px dashed #9A9A9A; box-sizing: border-box"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #E8E8E8"></span>
+      <span style="height: 24px; border-radius: 6px; background: #E8E8E8"></span>
+
+      <span style="font-size: 12px; font-weight: 600">Move</span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; border: 2px dashed #9A9A9A; box-sizing: border-box"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; border: 2px dashed #9A9A9A; box-sizing: border-box"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+
+      <span style="font-size: 12px; font-weight: 600">Do</span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #E8E8E8"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #E8E8E8"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+      <span style="height: 24px; border-radius: 6px; background: #E8E8E8"></span>
+      <span style="height: 24px; border-radius: 6px; background: #0A0A0A"></span>
+    </div>
+    <div style="display: flex; gap: 14px; flex-wrap: wrap">
+      <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #5C5C5C"><span style="width: 12px; height: 12px; border-radius: 3px; background: #0A0A0A"></span>Proved</span>
+      <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #5C5C5C"><span style="width: 12px; height: 12px; border-radius: 3px; border: 2px dashed #9A9A9A; box-sizing: border-box"></span>Late</span>
+      <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #5C5C5C"><span style="width: 12px; height: 12px; border-radius: 3px; background: #E8E8E8"></span>Not scheduled</span>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+    <div style="background: #FFFFFF; border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 4px">
+      <span style="font-size: 28px; font-weight: 800; letter-spacing: -1px">148</span>
+      <span style="font-size: 13px; color: #5C5C5C">missions proved</span>
+    </div>
+    <a href="Rewards.dc.html" style="background: #FFFFFF; border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: #0A0A0A">
+      <span style="font-size: 28px; font-weight: 800; letter-spacing: -1px">1,240</span>
+      <span style="font-size: 13px; color: #5C5C5C">points to spend →</span>
+    </a>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

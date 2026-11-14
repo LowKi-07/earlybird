@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>New mission</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0A0A0A}a:hover{color:#5C5C5C}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: #F2F2F2; color: #0A0A0A; font-family: Inter, system-ui, sans-serif; padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 22px">
+  <header style="display: flex; align-items: center; height: 44px">
+    <button type="button" aria-label="Close" style="width: 40px; height: 40px; border: 0; border-radius: 20px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; color: #0A0A0A">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+    </button>
+  </header>
+
+  <section style="display: flex; flex-direction: column; gap: 8px">
+    <h1 style="margin: 0; font-size: 40px; line-height: 42px; font-weight: 800; letter-spacing: -1.4px">What will you prove?</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 22px; color: #5C5C5C">Every mission keeps nudging you until it's done. No snooze, no swipe-away.</p>
+  </section>
+
+  <section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+    <button type="button" style="text-align: left; border: 0; background: #0A0A0A; color: #FFFFFF; border-radius: 24px; padding: 18px 16px; display: flex; flex-direction: column; gap: 28px; min-height: 196px">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2M5 3 2 6M22 6l-3-3"></path></svg>
+      <span style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 20px; font-weight: 800; letter-spacing: -0.3px">Wake up</span>
+        <span style="font-size: 13px; line-height: 18px; color: #B3B3B3">Walk to your TV and scan it to stop the alarm</span>
+        <span style="font-size: 12px; font-weight: 700; color: #FFFFFF">+20 pts</span>
+      </span>
+    </button>
+    <button type="button" style="text-align: left; border: 0; background: #FFFFFF; color: #0A0A0A; border-radius: 24px; padding: 18px 16px; display: flex; flex-direction: column; gap: 28px; min-height: 196px">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+      <span style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 20px; font-weight: 800; letter-spacing: -0.3px">Arrive</span>
+        <span style="font-size: 13px; line-height: 18px; color: #5C5C5C">Reach a place on time: office, gym, your stop</span>
+        <span style="font-size: 12px; font-weight: 700">+30 pts</span>
+      </span>
+    </button>
+    <button type="button" style="text-align: left; border: 0; background: #FFFFFF; color: #0A0A0A; border-radius: 24px; padding: 18px 16px; display: flex; flex-direction: column; gap: 28px; min-height: 196px">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16v-2.4C4 11.5 3 10.5 3 8c0-2.7 1.5-6 4.5-6C9.4 2 10 3.8 10 5.5c0 3.1-2 5.7-2 8.7V16a2 2 0 1 1-4 0z"></path><path d="M20 20v-2.4c0-2.1 1-3.1 1-5.6 0-2.7-1.5-6-4.5-6-1.9 0-2.5 1.8-2.5 3.5 0 3.1 2 5.7 2 8.7V20a2 2 0 1 0 4 0z"></path></svg>
+      <span style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 20px; font-weight: 800; letter-spacing: -0.3px">Move</span>
+        <span style="font-size: 13px; line-height: 18px; color: #5C5C5C">Hit a step goal before the day ends</span>
+        <span style="font-size: 12px; font-weight: 700">+40 pts</span>
+      </span>
+    </button>
+    <button type="button" style="text-align: left; border: 0; background: #FFFFFF; color: #0A0A0A; border-radius: 24px; padding: 18px 16px; display: flex; flex-direction: column; gap: 28px; min-height: 196px">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="m8 12 3 3 5-6"></path></svg>
+      <span style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 20px; font-weight: 800; letter-spacing: -0.3px">Do</span>
+        <span style="font-size: 13px; line-height: 18px; color: #5C5C5C">Any task, proved with a photo, checklist or focus timer</span>
+        <span style="font-size: 12px; font-weight: 700">+50 pts</span>
+      </span>
+    </button>
+  </section>
+
+  <div style="flex: 1"></div>
+
+  <section style="display: flex; flex-direction: column; gap: 10px; background: #FFFFFF; border-radius: 20px; padding: 16px">
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #5C5C5C">How every mission works</span>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+      <span style="font-size: 13px; font-weight: 600; line-height: 18px">1. It reminds you</span>
+      <span style="font-size: 13px; font-weight: 600; line-height: 18px">2. It escalates</span>
+      <span style="font-size: 13px; font-weight: 600; line-height: 18px">3. You prove it, earn points</span>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

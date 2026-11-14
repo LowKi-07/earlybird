@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Arrive — setup</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0A0A0A}a:hover{color:#5C5C5C}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: #EFEFEF; color: #0A0A0A; font-family: Inter, system-ui, sans-serif; position: relative">
+  <img src="/_blob/d83ce6ede0f10db9fa0772b382ca361f" alt="Map of the drive from your location to Work, about 19 minutes" style="position: absolute; left: 0; top: 0; width: 390px; height: 398px; object-fit: cover">
+  <div aria-hidden="true" style="position: absolute; left: 0; top: 358px; width: 390px; height: 40px; background: linear-gradient(180deg, rgba(239,239,239,0) 0%, #EFEFEF 100%)"></div>
+  <svg width="390" height="398" viewBox="0 0 390 398" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+    <circle cx="32" cy="172" r="30" fill="#0A84FF" fill-opacity="0.12" stroke="#0A84FF" stroke-width="2" stroke-dasharray="5 4"></circle>
+  </svg>
+  <span style="position: absolute; left: 62px; top: 196px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 700">Check-in zone · 100m</span>
+
+  <header style="position: absolute; top: 20px; left: 20px">
+    <button type="button" aria-label="Back" style="width: 44px; height: 44px; border: 0; border-radius: 22px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; color: #0A0A0A">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+    </button>
+  </header>
+
+  <section style="position: absolute; left: 0; right: 0; bottom: 0; top: 320px; background: #FFFFFF; border-radius: 32px 32px 0 0; padding: 22px 20px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #5C5C5C">Arrive mission</span>
+      <h1 style="margin: 0; font-size: 30px; line-height: 34px; font-weight: 800; letter-spacing: -0.8px">Reach the office</h1>
+      <span style="font-size: 14px; color: #5C5C5C">Saved place · [OFFICE ADDRESS]</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; background: #F2F2F2; border-radius: 18px; padding: 4px 16px">
+      <div style="display: flex; justify-content: space-between; align-items: center; min-height: 48px; border-bottom: 1px solid #E0E0E0">
+        <span style="font-size: 15px; font-weight: 600">Arrive by</span><span style="font-size: 15px; font-weight: 700">9:30 AM</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; min-height: 48px; border-bottom: 1px solid #E0E0E0">
+        <span style="font-size: 15px; font-weight: 600">Repeat</span><span style="font-size: 15px; color: #5C5C5C">Mon – Fri</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; min-height: 48px">
+        <span style="font-size: 15px; font-weight: 600">Leave-by nudge</span><span style="font-size: 15px; color: #5C5C5C">From live traffic</span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span style="font-size: 14px; font-weight: 600">Check in within</span>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; background: #F2F2F2; border-radius: 14px; padding: 4px">
+        <button type="button" style="height: 38px; border: 0; border-radius: 10px; background: transparent; font-size: 14px; font-weight: 600; color: #5C5C5C">50m</button>
+        <button type="button" style="height: 38px; border: 0; border-radius: 10px; background: #0A0A0A; font-size: 14px; font-weight: 700; color: #FFFFFF">100m</button>
+        <button type="button" style="height: 38px; border: 0; border-radius: 10px; background: transparent; font-size: 14px; font-weight: 600; color: #5C5C5C">200m</button>
+        <button type="button" style="height: 38px; border: 0; border-radius: 10px; background: transparent; font-size: 14px; font-weight: 600; color: #5C5C5C">500m</button>
+      </div>
+    </div>
+
+    <div style="flex: 1"></div>
+    <a href="ArriveActive.dc.html" style="height: 60px; border-radius: 30px; background: #0A0A0A; color: #FFFFFF; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none">Set mission · +30 pts</a>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

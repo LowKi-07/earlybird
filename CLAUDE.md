@@ -23,6 +23,24 @@ Live preview: https://claude.ai/artifact/K8Do9JB2sLpH8WqTFN5w2z
      every build, so include the new one and set the old bundle path to `null`.
 5. Commit, push the branch, and tell the owner the preview link.
 
+## Redesign canvas (claude.ai Design artifact)
+
+The "prove it" redesign (missions: Wake up / Arrive / Move / Do, points and rewards) lives in a
+claude.ai Design canvas: https://claude.ai/artifact/MJo6zvZoGfsgwXsqYy9w5f
+
+- `design/canvas/` is a snapshot of that canvas's source: `canvas.json` (board layout) plus one
+  `<Screen>.dc.html` per phone screen. The live canvas is the source of truth; people may edit it in
+  the browser, so `read` it (Artifact tool) before changing anything and copy the result back here.
+- To change a screen: read the canvas's `project/<Screen>.dc.html`, edit it, publish with `url` set
+  to the canvas link above, `root` set to the folder holding a `project/` directory with your edited
+  files, and only the files you changed. Send `project/canvas.json` only when adding, removing or
+  moving screens. Then copy the changed files into `design/canvas/`, commit and push.
+- Photos used on screens are uploaded assets referenced as `/_blob/<id>` URLs. Those originals stay out
+  of this public repo on purpose (they show the owner's home and commute).
+- Colour direction for the redesign: mostly black and white, plus Apple Health–style category colours
+  for data only (Wake indigo `#5E5CE6`, Move orange `#FF5A1F`, success green `#30D158`). The app code
+  below is still the older strict black-and-white prototype until the redesign is built.
+
 ## Conventions
 
 - Navigation is a deliberately tiny stack in `App.tsx` + `src/state/AppState.tsx` (the owner asked
